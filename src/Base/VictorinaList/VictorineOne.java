@@ -7,8 +7,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class VictorineOne extends Victorina {
-    public VictorineOne(String title, String[] quest) {
-        super(title, quest);
+
+
+    public VictorineOne(String title, String[] quest,ImageIcon imageIcon,String text) {
+        super(title, quest,imageIcon,text);
     }
 
     @Override

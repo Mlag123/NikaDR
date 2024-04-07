@@ -11,8 +11,10 @@ import java.util.Arrays;
 
 public class Window extends JFrame {
 
+
+
     private final Dimension dimension = new Dimension(800, 600);
-    private final String resources_path = "./Resources/iamges/";
+    private final String resources_path = "./Resources/images/";
     private final JPanel grid = new JPanel();
     private final JButton test_but = new JButton("тест");
     private final JButton test2 = new JButton("test 2");
@@ -40,11 +42,13 @@ public class Window extends JFrame {
             }
         });
     }
+
     String[] quest = {
             "утка", "лиса", "кот"
     };
+
     public void victorinaFrame(String title) {
-        new VictorineOne("Первая викторина",quest);
+        new VictorineOne("Первая викторина", quest,getImage("lusyaFirst.jpg"),"бла бла бла");
     }
 
     public ImageIcon getImage(String path) {
@@ -56,9 +60,17 @@ public class Window extends JFrame {
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
+        getContentPane().add(grid);
         grid.add(test_but, "North");
         grid.add(test2, "South");
+        Image a = getImage("lusyaFirst.jpg").getImage().getScaledInstance(300,400,Image.SCALE_DEFAULT);
+        JLabel lusa = new JLabel(new ImageIcon(a));
+        JLabel text = new JLabel("Куда пойдешь?");
+        grid.add(text);
+        grid.add(lusa);
         add(grid);
+        pack();
+
     }
 
     public static void main(String[] args) throws IOException {

@@ -8,22 +8,31 @@ import java.awt.event.ActionListener;
 
 public abstract class Victorina {
     private JComboBox<String> comboBox;
+    private String text;
+    private JLabel image = new JLabel();
     private String[] quest = {
             "утка", "лиса", "кот"
     };
 
-    public Victorina(String title, String[] quest) {
+    public Victorina(String title, String[] quest, ImageIcon imageIcon, String text) {
         this.quest = quest;
+        this.text = text;
         int selected = 0;
-
+        image = new JLabel(imageIcon);
         comboBox = new JComboBox<>(quest);
         JPanel grid = new JPanel();
         JFrame frame = new JFrame(title);
         frame.setVisible(true);
         frame.setSize(600, 400);
         frame.setResizable(false);
+        grid.add(new JLabel(text));
         grid.add(comboBox, BorderLayout.SOUTH);
+        grid.add(image);
+
+
         frame.add(grid);
+
+        frame.pack();
         Action();
 
 

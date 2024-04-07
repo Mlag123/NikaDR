@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="NikaDR:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/NikaDR_jar</output-path>
+    <root id="archive" name="NikaDR.jar">
+      <element id="module-output" name="NikaDR" />
+    </root>
+  </artifact>
+</component>
